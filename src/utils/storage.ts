@@ -5,13 +5,13 @@ class Storage {
     this.Key = Key
     this.Val = Val
   }
-  setItem(): any {
+  public setItem(): any {
     window.localStorage.setItem(this.Key, this.Val)
   }
-  getItem(): any {
+  public getItem(): any {
     return window.localStorage.getItem(this.Key)
   }
-  removeItem(): any {
+  public removeItem(): any {
     return window.localStorage.removeItem(this.Key)
   }
 }

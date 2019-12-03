@@ -162,15 +162,6 @@ module.exports = {
 		hotOnly: true, // 热更新
 		// proxy: 'http://localhost:8000'   // 配置跨域处理,只有一个代理
 		proxy: { //配置自动启动浏览器
-			// "/": {
-			// 	target: "http://baidu.com",
-			// 	changeOrigin: true,//是否跨域
-			// 	ws: true, // proxy websockets
-			// 	secure: false,
-			// 	// pathRewrite: {//重写路径
-			// 	// 		"^/admin": ''
-			// 	// }
-			// },
 			"/data/*": {
 				target: "http://baidu.com",
 				changeOrigin: true,//是否跨域

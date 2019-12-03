@@ -9,6 +9,9 @@ const CompressionPlugin = require('compression-webpack-plugin'); //Gzip
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; //Webpack包文件分析器
 const baseUrl = process.env.NODE_ENV === "production" ? "/static/" : "/"; //font scss资源路径 不同环境切换控制
 const IS_PROD = ["production", "prod"].includes(process.env.NODE_ENV);
+const webpack = require("webpack");
+const environment = require("./environment");
+
 
 module.exports = {
 	//基本路径
@@ -49,7 +52,28 @@ module.exports = {
          .loader('px2rem-loader')
          .options({
              remUnit: 75
-         })
+				 })
+		if (IS_PROD) {
+			// 压缩图片
+			config.module
+				.rule("images")
+				.test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+				.use("image-webpack-loader")
+				.loader("image-webpack-loader")
+				.options({
+					mozjpeg: { progressive: true, quality: 65 },
+					optipng: { enabled: false },
+					pngquant: { quality: [0.65, 0.90], speed: 4 },
+					gifsicle: { interlaced: false }
+				});
+	
+			// 打包分析
+			config.plugin("webpack-report").use(BundleAnalyzerPlugin, [
+				{
+					analyzerMode: "static"
+				}
+			]);
+		}
 	},
 	//调整 webpack 配置 https://cli.vuejs.org/zh/guide/webpack.html#%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F
 	configureWebpack: config => {
@@ -79,28 +103,17 @@ module.exports = {
 			// 为开发环境修改配置...
 			config.plugins = [...config.plugins, ...pluginsDev];
 		}
+		return{
+			plugins: [
+        new webpack.DefinePlugin({
+          "process.env.STAGE": JSON.stringify(environment.stage),
+          "process.env.LOCAL_URL": JSON.stringify(environment.localUrl)
+        })
+      ]
+		}
+		
 	},
-	if (IS_PROD) {
-		// 压缩图片
-		config.module
-			.rule("images")
-			.test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
-			.use("image-webpack-loader")
-			.loader("image-webpack-loader")
-			.options({
-				mozjpeg: { progressive: true, quality: 65 },
-				optipng: { enabled: false },
-				pngquant: { quality: [0.65, 0.90], speed: 4 },
-				gifsicle: { interlaced: false }
-			});
-
-		// 打包分析
-		config.plugin("webpack-report").use(BundleAnalyzerPlugin, [
-			{
-				analyzerMode: "static"
-			}
-		]);
-	},
+	
 	css: {
 			// 启用 CSS modules
 			modules: false,
@@ -149,11 +162,23 @@ module.exports = {
 		hotOnly: true, // 热更新
 		// proxy: 'http://localhost:8000'   // 配置跨域处理,只有一个代理
 		proxy: { //配置自动启动浏览器
-			"/XX/*": {
-				target: "http://172.11.11.11:7071",
-				changeOrigin: true,
-				// ws: true,//websocket支持
-				secure: false
+			// "/": {
+			// 	target: "http://baidu.com",
+			// 	changeOrigin: true,//是否跨域
+			// 	ws: true, // proxy websockets
+			// 	secure: false,
+			// 	// pathRewrite: {//重写路径
+			// 	// 		"^/admin": ''
+			// 	// }
+			// },
+			"/data/*": {
+				target: "http://baidu.com",
+				changeOrigin: true,//是否跨域
+				ws: true, // proxy websockets
+				secure: false,
+				pathRewrite: {//重写路径
+						"^/admin": ''
+				}
 			},
 			"/XX2/*": {
 				target: "http://172.12.12.12:2018",

@@ -5,7 +5,9 @@ import store from './store/index';
 import 'lib-flexible'
 import '@/assets/scss/common.scss'
 
+
 Vue.config.productionTip = false;
+
 
 new Vue({
   router,

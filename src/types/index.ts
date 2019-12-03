@@ -1,5 +1,9 @@
-export interface ResportData{
+interface ResportData{
   code:Number,
   data?: any,
-  mas:string
+  msg:string
+}
+
+export {
+  ResportData
 }

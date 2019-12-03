@@ -5,7 +5,10 @@
     <router-view/>
   </div>
 </template>
-
+<script lang='ts'>
+export default {
+}
+</script>
 <style lang="scss" scope>
 @import '@/assets/scss/mixin.scss';
  #app{

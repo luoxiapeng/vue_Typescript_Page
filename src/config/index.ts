@@ -1,18 +1,29 @@
 import axios from 'axios'
 import Vue from 'vue'
-import envConfigPageUrl from '@/config/envUrl'
-import {ResportData} from '@/types'
+import {getWayUrl} from '@/config/envUrl'
 
+let RequestBaseUrl: string | undefined
+
+try {
+  RequestBaseUrl = process.env.NODE_ENV === 'development' ? getWayUrl() : process.env.VUE_APP_BASEURL
+} catch (error) {
+  RequestBaseUrl = getWayUrl()
+}
 const service = axios.create({
-  baseURL: envConfigPageUrl(),
+  baseURL: './',
   timeout: 1000
 })
+
 
 Vue.prototype.$http = service
 
 // 请求拦截
 // request请求拦截器
 service.interceptors.request.use((config) => {
+  if(config.url===undefined){
+    config.baseURL=RequestBaseUrl
+  }
+  console.log(config)
   return config
 }, (error) => {
   Promise.reject(error)

@@ -1,3 +1,4 @@
+"use script"
 class Storage {
   Key: string
   Val: any

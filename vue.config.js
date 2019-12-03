@@ -8,6 +8,7 @@ const vConsolePlugin = require('vconsole-webpack-plugin'); // 引入 移动端�
 const CompressionPlugin = require('compression-webpack-plugin'); //Gzip
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; //Webpack包文件分析器
 const baseUrl = process.env.NODE_ENV === "production" ? "/static/" : "/"; //font scss资源路径 不同环境切换控制
+const IS_PROD = ["production", "prod"].includes(process.env.NODE_ENV);
 
 module.exports = {
 	//基本路径
@@ -79,6 +80,27 @@ module.exports = {
 			config.plugins = [...config.plugins, ...pluginsDev];
 		}
 	},
+	if (IS_PROD) {
+		// 压缩图片
+		config.module
+			.rule("images")
+			.test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+			.use("image-webpack-loader")
+			.loader("image-webpack-loader")
+			.options({
+				mozjpeg: { progressive: true, quality: 65 },
+				optipng: { enabled: false },
+				pngquant: { quality: [0.65, 0.90], speed: 4 },
+				gifsicle: { interlaced: false }
+			});
+
+		// 打包分析
+		config.plugin("webpack-report").use(BundleAnalyzerPlugin, [
+			{
+				analyzerMode: "static"
+			}
+		]);
+	},
 	css: {
 			// 启用 CSS modules
 			modules: false,
@@ -94,6 +116,7 @@ module.exports = {
 					`
 					$baseUrl: "/";
 					@import '@/assets/scss/common.scss';
+					@import '@/assets/scss/mixin.scss';
 					`
 				}
 			},

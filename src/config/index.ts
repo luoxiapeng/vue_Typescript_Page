@@ -1,6 +1,7 @@
 import axios from 'axios'
 import Vue from 'vue'
 import envConfigPageUrl from '@/config/envUrl'
+import {ResportData} from '@/types'
 
 const service = axios.create({
   baseURL: envConfigPageUrl(),
@@ -18,9 +19,7 @@ service.interceptors.request.use((config) => {
 })
 // respone返回拦截器
 service.interceptors.response.use(
-  ({
-    data
-  }) => {
+  ({data}) => {
     return data
   },
   (error) => {

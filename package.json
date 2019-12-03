@@ -9,12 +9,25 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "compression-webpack-plugin": "^3.0.0",
     "core-js": "^2.6.5",
+    "lib-flexible": "^0.3.2",
+    "postcss-plugin-px2rem": "^0.8.1",
+    "px2rem-loader": "^0.1.9",
+    "vconsole-webpack-plugin": "^1.5.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.3",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "webpack": "^4.41.2",
+    "webpack-bundle-analyzer": "^3.6.0"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {},
+      "precss": {}
+    }
   },
   "devDependencies": {
     "@types/jest": "^23.1.4",
@@ -25,6 +38,8 @@
     "@vue/test-utils": "1.0.0-beta.29",
     "axios": "^0.19.0",
     "babel-core": "7.0.0-bridge.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
     "ts-jest": "^23.0.0",
     "typescript": "^3.4.3",
     "vue-template-compiler": "^2.6.10"

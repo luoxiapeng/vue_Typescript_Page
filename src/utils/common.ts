@@ -55,4 +55,17 @@ export function deepMerge(...objs: any[]): any {
 
   return result;
 }
+export function sethtml(designSize: number, rootValue?: number) {
+  let rootV = 100;
+  if (rootValue) {
+      rootV = rootValue;
+  }
+  // 窗口宽度
+  const winWidth = window.document.documentElement.clientWidth;
+  // 如果窗口宽度超过1.5倍设计图了,则不再调整
+  if (winWidth > 1.5 * designSize) { return; }
+  // window.console.log(winWidth);
+  const htmlFontSize = winWidth * rootV / designSize;
+  window.document.documentElement.style.fontSize = htmlFontSize + 'px';
+}
 

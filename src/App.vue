@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    <div class="font-class fr">哈哈哈</div>
-   
+    <div class="font-class">广州</div>
+    <van-button type="primary" size="mini">主要按钮</van-button>
     <router-view/>
   </div>
 </template>
 <script lang='ts'>
 export default {
+ created() {
+   
+ },
 }
 </script>
 <style lang="scss" scope>
@@ -17,10 +20,10 @@ export default {
    padding: 0;
    margin: 0;
   //  background-color: red;
-  @include red;
+  // @include red;
    .font-class{
-     font-size: 16px;
-     color:#fff
+     font-size: 32px;
+     color:red
    }
  }
   

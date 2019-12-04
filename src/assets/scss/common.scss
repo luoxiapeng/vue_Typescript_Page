@@ -32,8 +32,6 @@ sup, sub { font-size: 100%; vertical-align: baseline; }
 /* remember to highlight anchors and inserts somehow! */
 blockquote, q { quotes: none; }
 blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
-
-
 .fr { float: right; display: inline;}
 .fl { float: left; display: inline;}
 .ehn, .otw, .tow { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }

@@ -11,6 +11,8 @@ const baseUrl = process.env.NODE_ENV === "production" ? "/static/" : "/"; //font
 const IS_PROD = ["production", "prod"].includes(process.env.NODE_ENV);
 const webpack = require("webpack");
 const environment = require("./environment");
+const autoprefixer = require('autoprefixer')
+const pxtorem = require('postcss-pxtorem')
 
 
 module.exports = {
@@ -150,6 +152,14 @@ module.exports = {
 										mediaQuery: false, //（布尔值）允许在媒体查询中转换px。
 										minPixelValue: 3 //设置要替换的最小像素值(3px会被转rem)。 默认 0
 								}),
+								autoprefixer({
+									browsers: ['Android >= 4.0', 'iOS >= 7']
+								}),
+								pxtorem({
+									rootValue: 37.5,
+									propList: ['*'],
+								})
+								
 						]
 				}
 		}

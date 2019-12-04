@@ -1,6 +1,7 @@
 {
   "name": "vue3.0_project3_module",
   "version": "0.1.0",
+  "author": "luoxiapeng",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

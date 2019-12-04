@@ -1,27 +1,30 @@
+
+/**
+ * @author luoxiapeng
+ * @lastTime 2019/12/4
+ */
 import * as ServiceApi from '@/api/modules/system'
-import * as actionType from '@/store/actionType'
+import * as mutationsType from '@/store/mutationsType'
+import {systemState} from '@/store/type'
 const system = {
   state: {
-    list:[]
+    list:{}
   },
   mutations: {
-    [actionType.GETLIST](state:Object,info:Object){
+    [mutationsType.GETLIST](state:systemState,info:Object){
       state.list=info
-      console.log(state)
-      console.log(info)
+      console.log(state.list,0)
     }
+    
    
   },
   actions: {
     async getList({commit,state}:any,info:Object){
-      console.log(state)
-      console.log(commit)
-      console.log(info)
-      commit(actionType.GETLIST,info)
+      commit(mutationsType.GETLIST,info)
       // let responDta =ServiceApi.getHome(info).then((res:any)=>{
         
       // })
-      // commit(actionType.GETLIST,await responDta)
+      // commit(mutationsType.GETLIST,await responDta)
     }
     
   }

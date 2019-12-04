@@ -1,3 +1,8 @@
+
+/**
+ * @author luoxiapeng
+ * @lastTime 2019/12/2
+ */
 import request from '@/config/Require'
 
 export function getHome(params:Object):any{

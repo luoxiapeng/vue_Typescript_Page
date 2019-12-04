@@ -1,5 +1,7 @@
 /**
  *  envConfigPageUrl
+ *  @author luoxiapeng
+ *  @lastTime 2019/12/1
  */
 // 兼容本地环境
 export function getWayUrl():string {

@@ -1,3 +1,9 @@
+
+
+/**
+ * @author luoxiapeng
+ * @lastTime 2019/11/20
+ */
 "use script"
 class Storage {
   Key: string

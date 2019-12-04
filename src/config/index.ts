@@ -1,3 +1,7 @@
+/**
+ * @author luoxiapeng
+ * @lastTime 2019/12/1
+ */
 import axios from 'axios'
 import Vue from 'vue'
 import {getWayUrl} from '@/config/envUrl'

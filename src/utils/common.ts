@@ -1,4 +1,9 @@
 
+
+/**
+ * @author luoxiapeng
+ * @lastTime 2019/12/3
+ */
 const toString = Object.prototype.toString;
 
 export function isDate(val: any): val is Date {

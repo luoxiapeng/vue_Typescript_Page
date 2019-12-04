@@ -1,4 +1,8 @@
 
+/**
+ * @author luoxiapeng
+ * @lastTime 2019/12/2
+ */
 import axiosServe from './index'
 async function AxiosRequire(params={}){
   let promise =new Promise((resolve,reject)=>{

@@ -77,6 +77,7 @@ module.exports = {
 	},
 	//调整 webpack 配置 https://cli.vuejs.org/zh/guide/webpack.html#%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F
 	configureWebpack: config => {
+		const plugins = [];
 		//生产and测试环境
 		let pluginsPro = [
 			new CompressionPlugin({ //文件开启Gzip，也可以通过服务端(如：nginx)(https://github.com/webpack-contrib/compression-webpack-plugin)
@@ -97,7 +98,8 @@ module.exports = {
 				enable:process.env.NODE_ENV === 'production'? false:true // 发布代码前记得改回 false
 			}),
 		];
-		if(process.env.NODE_ENV === 'production') { // 为生产环境修改配置...process.env.NODE_ENV !== 'development'
+		if(process.env.NODE_ENV === 'production') { 
+			// 为生产环境修改配置...process.env.NODE_ENV !== 'development'
 			config.plugins = [...config.plugins, ...pluginsPro];
 		} else {
 			// 为开发环境修改配置...

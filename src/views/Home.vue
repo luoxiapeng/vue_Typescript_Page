@@ -7,25 +7,29 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import * as ServiceApi from '@/api/modules/system'
+import * as actionType from '@/store/actionType'
+import { mapGetters } from 'vuex'
 @Component({
   components: {
   }
 })
 export default class Home extends Vue {
   private haha: string = "1111";
+ 
   created() {
     // alert(this.haha);
     let data={
       a:1,
       b:2
     }
-    ServiceApi.getHome(data).then((res:any)=>{
-      console.log(res)
+    this.$store.dispatch({
+      type: 'getList',
+      data: data
     })
-    ServiceApi.getHome2(data,'/data/aa').then((res:any)=>{
-      console.log(res)
-    })
+    console.log(this.$store.getters)
   }
+
+  
   private fn() {
     return;
   }

@@ -23,7 +23,6 @@ service.interceptors.request.use((config) => {
   if(config.url===undefined){
     config.baseURL=RequestBaseUrl
   }
-  console.log(config)
   return config
 }, (error) => {
   Promise.reject(error)

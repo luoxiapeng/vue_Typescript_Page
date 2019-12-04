@@ -1,0 +1,1 @@
+export const GETLIST:string="get_list"

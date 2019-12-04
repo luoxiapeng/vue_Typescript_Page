@@ -6,6 +6,7 @@
           <img :src="locationIcon" class="location-icon" />
         </van-col>
         <van-col span="18">
+          <img :src="searchIcon" alt="" class="search-Icon">
           <input type="text" class="search-input" />
         </van-col>
         <!-- <van-col span="5">
@@ -68,6 +69,7 @@ export default class Home extends Vue {
     background-color: #e5017d;
     line-height: 100px;
     padding: 10px;
+    position:relative;
     .location-icon {
       height: 50px;
       width: 50px;
@@ -78,8 +80,17 @@ export default class Home extends Vue {
       height: 60px;
       width: 100%;
       border-radius: 10px;
-      padding-left:50px;
+      padding-left:60px;
+      border:none;
     }
+    .search-Icon{
+        position:absolute;
+        left:16%;
+        top:50%;
+        margin-top:-19px;
+        height:38px;
+        width:38px;
+      }
     .searchIcon-icon{
       height:50px;
       width:50px;

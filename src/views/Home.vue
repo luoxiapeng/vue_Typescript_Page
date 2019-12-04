@@ -9,9 +9,6 @@
           <img :src="searchIcon" alt="" class="search-Icon">
           <input type="text" class="search-input" />
         </van-col>
-        <!-- <van-col span="5">
-          <img :src="searchIcon" class="searchIcon-icon" />
-        </van-col> -->
       </van-row>
     </div>
   </div>

@@ -75,7 +75,7 @@ module.exports = {
 					analyzerMode: "static"
 				}
 			]);
-		}
+		};
 	},
 	//调整 webpack 配置 https://cli.vuejs.org/zh/guide/webpack.html#%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F
 	configureWebpack: config => {
@@ -127,15 +127,7 @@ module.exports = {
 			sourceMap: false,
 			// css预设器配置项
 			loaderOptions: {
-				sass: {
-					//设置css中引用文件的路径，引入通用使用的scss文件（如包含的@mixin）
-					data: 
-					`
-					$baseUrl: "/";
-					@import '@/assets/scss/common.scss';
-					@import '@/assets/scss/mixin.scss';
-					`
-				}
+			
 			},
 			loaderOptions: {
 				postcss: {
@@ -152,18 +144,31 @@ module.exports = {
 										mediaQuery: false, //（布尔值）允许在媒体查询中转换px。
 										minPixelValue: 3 //设置要替换的最小像素值(3px会被转rem)。 默认 0
 								}),
-								autoprefixer({
-									browsers: ['Android >= 4.0', 'iOS >= 7']
-								}),
 								pxtorem({
 									rootValue: 37.5,
 									propList: ['*'],
 								})
 								
 						]
+				},
+				sass: {
+					//设置css中引用文件的路径，引入通用使用的scss文件（如包含的@mixin）
+					prependData: 
+					`@import "~@/assets/scss/_global.sass";
+					@import "~@/assets/scss/_common.sass";
+					@import "~@/assets/scss/_mixin.sass";
+					`
+				},
+				scss: {
+					//设置css中引用文件的路径，引入通用使用的scss文件（如包含的@mixin）
+					prependData: `
+					@import "~@/assets/scss/_global.scss";
+					@import "~@/assets/scss/_common.scss";
+					@import "~@/assets/scss/_mixin.scss";
+					`
 				}
-		}
-	},
+			}
+		},
 	// webpack-dev-server 相关配置 https://webpack.js.org/configuration/dev-server/
 	devServer: {
 		// host: 'localhost',
@@ -196,10 +201,10 @@ module.exports = {
 	pluginOptions: {
 		'style-resources-loader': {//https://github.com/yenshih/style-resources-loader
 			preProcessor: 'scss',//声明类型
-			'patterns': [
-                                //path.resolve(__dirname, './src/assets/scss/_common.scss'), 
+			patterns: [
+          // path.resolve(__dirname, './src/assets/scss/_mixin.scss'), 
 			],
-                        //injector: 'append'
+      // injector: 'append'
 		}
 	}
 };

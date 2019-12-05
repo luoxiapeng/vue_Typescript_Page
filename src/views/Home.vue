@@ -78,7 +78,6 @@ export default class Home extends Vue {
       line-height: 100px;
       padding: 10px;
       position:relative;
-      @include red;
       .location-icon {
         height: 50px;
         width: 50px;

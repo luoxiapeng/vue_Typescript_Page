@@ -179,14 +179,14 @@ module.exports = {
 		hotOnly: true, // 热更新
 		// proxy: 'http://localhost:8000'   // 配置跨域处理,只有一个代理
 		proxy: { //配置自动启动浏览器
-			"/data/*": {
-				target: "http://baidu.com",
+			"/SmallVue/*": {
+				target: "https://easy-mock.com/mock/5de89c8d89c8451dc927ee67",
 				changeOrigin: true,//是否跨域
 				ws: true, // proxy websockets
 				secure: false,
-				pathRewrite: {//重写路径
-						"^/admin": ''
-				}
+				// pathRewrite: {//重写路径
+				// 		"^/admin/*": ''
+				// }
 			},
 			"/XX2/*": {
 				target: "http://172.12.12.12:2018",

@@ -11,21 +11,21 @@ const system = {
     list:{}
   },
   mutations: {
-    [mutationsType.GETLIST](state:systemState,info:Object){
-      state.list=info
-      console.log(state.list,0)
-    }
+    // [mutationsType.GETLIST](state:systemState,info:Object){
+    //   state.list=info
+    //   console.log(state.list,0)
+    // }
     
    
   },
   actions: {
-    async getList({commit,state}:any,info:Object){
-      commit(mutationsType.GETLIST,info)
-      // let responDta =ServiceApi.getHome(info).then((res:any)=>{
+    // async getList({commit,state}:any,info:Object){
+    //   commit(mutationsType.GETLIST,info)
+    //   // let responDta =ServiceApi.getHome(info).then((res:any)=>{
         
-      // })
-      // commit(mutationsType.GETLIST,await responDta)
-    }
+    //   // })
+    //   // commit(mutationsType.GETLIST,await responDta)
+    // }
     
   }
 }

@@ -6,9 +6,9 @@
 // 兼容本地环境
 export function getWayUrl():string {
   const urlMap:any = {
-    local: "http://api-dev.myutopa.com/pay/app",
+    local: "https://easy-mock.com/mock/5de89c8d89c8451dc927ee67/SmallVue/mock",
     test: "http://api-test.myutopa.com/pay/app",
-    dev: "http://api-dev.myutopa.com/pay/app",
+    dev: "https://easy-mock.com/mock/5de89c8d89c8451dc927ee67/SmallVue/mock",
     prod: "http://api.myutopa.com/pay/app",
     pred: "http://api-pred.myutopa.com/pay/app"
   };

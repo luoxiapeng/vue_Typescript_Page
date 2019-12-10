@@ -1,1 +1,1 @@
-export const GETLIST:string="get_list"
+export const GETHOMELIST:string="getHomeList"

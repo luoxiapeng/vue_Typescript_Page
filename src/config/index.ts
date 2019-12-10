@@ -24,6 +24,7 @@ Vue.prototype.$http = service
 // 请求拦截
 // request请求拦截器
 service.interceptors.request.use((config) => {
+  // console.log(config)
   if(config.url===undefined){
     config.baseURL=RequestBaseUrl
   }
@@ -31,6 +32,7 @@ service.interceptors.request.use((config) => {
 }, (error) => {
   Promise.reject(error)
 })
+
 // respone返回拦截器
 service.interceptors.response.use(
   ({data}) => {

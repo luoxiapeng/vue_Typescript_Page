@@ -18,55 +18,53 @@
         </van-swipe-item>
     </van-swipe>
     </div>
+    <div>
+      {{HomeListData}}
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import * as ServiceApi from "@/api/modules/system";
-import * as mutationsType from "@/store/mutationsType";
-import { mapGetters } from "vuex";
+import { mapGetters,mapState} from "vuex";
 
 @Component({
-  components: {}
+  components: {},
+  // computed:{
+  //   ...mapState({
+  //     HomeListData:'HomeListData'
+  //   })
+  // }
 })
 export default class Home extends Vue {
   private haha: string = "1111";
-
-  data() {
-    return {
-      locationIcon: require("@/assets/image/location.png"),
-      searchIcon:require('@/assets/image/search.png'),
-      bannerPicArray:[
+  locationIcon=require("@/assets/image/location.png")
+  searchIcon=require('@/assets/image/search.png')
+  bannerPicArray=[
         {imageUrl:'https://img.yzcdn.cn/vant/apple-1.jpg'},
         {imageUrl:'https://img.yzcdn.cn/vant/apple-2.jpg'},
-        {imageUrl:'https://img.yzcdn.cn/vant/apple-3.jpg'},
-      ]
-    };
-  }
-
-  created() {
-    // let data = {
-    //   a: 1,
-    //   b: 2
-    // };
-    // this.$store.dispatch({
-    //   type: "getList",
-    //   data: data
-    // });
-    // console.log(this.$store.getters);
-  }
-  get computed(): any {
-    let a = mapGetters({
+        {imageUrl:'https://img.yzcdn.cn/vant/apple-3.jpg'},]
+  HomeListData = mapState({
       // ...
-      list: "list"
+      Homelist: 'home.Homelist'
     });
-    return a;
+  created() {
+    this.$store.dispatch({
+      type: 'getHomeList'
+    });
+    console.log('$$$$'+this.$store.state.home.Homelist)
+    
+    
   }
-
-  private fn() {
-    return;
-  }
+  // get computed(){
+  //   this.HomeListData = mapState({
+  //     // ...
+  //     Homelist: "Homelist"
+  //   });
+  //   return 
+  // }
+  
 }
 </script>
 <style lang="scss" scope>

@@ -27,13 +27,13 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import * as ServiceApi from "@/api/modules/system";
-import { mapGetters,mapState} from "vuex";
+import { mapGetters} from "vuex";
 
 @Component({
   components: {},
   // computed:{
   //   ...mapState({
-  //     HomeListData:'HomeListData'
+  //     HomeListData:'home.Homelist'
   //   })
   // }
 })
@@ -45,15 +45,12 @@ export default class Home extends Vue {
         {imageUrl:'https://img.yzcdn.cn/vant/apple-1.jpg'},
         {imageUrl:'https://img.yzcdn.cn/vant/apple-2.jpg'},
         {imageUrl:'https://img.yzcdn.cn/vant/apple-3.jpg'},]
-  HomeListData = mapState({
-      // ...
-      Homelist: 'home.Homelist'
-    });
+  HomeListData=this.$store.state.home.Homelist
   created() {
     this.$store.dispatch({
       type: 'getHomeList'
     });
-    console.log('$$$$'+this.$store.state.home.Homelist)
+    
     
     
   }

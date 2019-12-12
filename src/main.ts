@@ -6,11 +6,11 @@ import 'lib-flexible/flexible'
 import 'vant/lib/index.css'
 import 'amfe-flexible/index.js'
 
-import { Button, Row, Col,Swipe, SwipeItem,Lazyload  } from 'vant'
+import { Button, Row, Col,Swipe, SwipeItem,Lazyload,Tabbar, TabbarItem } from 'vant'
 Vue.use(Button)
   .use(Row)
   .use(Col)
-  .use(Swipe).use(SwipeItem).use(Lazyload);
+  .use(Swipe).use(SwipeItem).use(Lazyload).use(Tabbar).use(TabbarItem);
 
 Vue.config.productionTip = false
 new Vue({

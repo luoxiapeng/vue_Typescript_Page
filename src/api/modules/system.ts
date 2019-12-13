@@ -12,7 +12,15 @@ import request from '@/config/Require'
 //   })
 //  }
 
- export function grtHomeList(params:Object={},url?:any):any{
+ export function getHomeList(params:Object={},url?:any):any{
+  return request.get({
+    params
+  },url)
+ }
+
+ //获取静态数据，本地缓存
+
+ export function getHomeJsonData(params:Object={},url?:any):any{
   return request.get({
     params
   },url)

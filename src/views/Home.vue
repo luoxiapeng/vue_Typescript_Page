@@ -4,6 +4,7 @@
     <Swiper/>
     <Nav/>
     <TableBar/>
+    
   </div>
 </template>
 
@@ -25,12 +26,11 @@ import { mapGetters} from "vuex";
   }
 })
 export default class Home extends Vue {
-  HomeListData=this.$store.state.home.Homelist
+  public HomeListData={}
   created() {
-    // this.$store.dispatch({
-    //   type: 'getHomeList'
-    // });
-    
+  }
+  mounted() {
+    this.HomeListData= this.$store.state.home.Homelist
   }
   // get computed(){
   //   this.HomeListData = mapState({

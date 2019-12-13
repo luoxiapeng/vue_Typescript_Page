@@ -14,6 +14,10 @@ const environment = require("./environment");
 const autoprefixer = require('autoprefixer')
 const pxtorem = require('postcss-pxtorem')
 
+// 模拟数据
+const appData = require('./data.json')
+const seller = appData.HomeData
+
 
 module.exports = {
 	//基本路径
@@ -194,7 +198,18 @@ module.exports = {
 				//ws: true,//websocket支持
 				secure: false
 			},
-		}
+		},
+		before(app) {
+				app.get('/api/homeData', function (req, res) {
+					res.json({
+						errno: 0,
+						msg:'获取成功',
+						status:200,
+						code:0,
+						data: seller
+					})
+				})
+			}
 	},
 
 	// 第三方插件配置 https://www.npmjs.com/package/vue-cli-plugin-style-resources-loader

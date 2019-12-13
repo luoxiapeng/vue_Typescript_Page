@@ -7,7 +7,10 @@
 export default {
    
  created() {
-   
+   //静态数据模拟，获取首页数据
+   this.$store.dispatch({
+      type: 'getHomeJsonData'
+    });
    
  },
 }

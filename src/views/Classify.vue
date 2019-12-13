@@ -1,6 +1,6 @@
 <template>
   <div>
-    发现
+    分类
      <TableBar/>
   </div>
 </template>
@@ -13,7 +13,7 @@ import { Component, Vue } from "vue-property-decorator";
     TableBar
   }
 })
-export default class Find extends Vue{
+export default class Classify extends Vue{
   
 }
 </script>

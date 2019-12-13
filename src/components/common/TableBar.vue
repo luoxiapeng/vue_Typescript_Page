@@ -1,16 +1,16 @@
 <template>
-  <div>
+  <div cloass="TableBar-contain">
       <van-tabbar v-model="active">
          <van-tabbar-item v-for="(item,index) in tabbars" :key="index" :to="(item.name)">
           <span>{{item.title}}</span>
-          <img slot="icon" slot-scope="props" :src="props.active ? item.active : item.normal" />
+          <img class="TableBar-item-icon" style="height：20px;width:20px" slot="icon" slot-scope="props" :src="props.active ? item.active : item.normal" />
         </van-tabbar-item>
     </van-tabbar>
     
   </div>
 </template>
 
-<script lang="ts">
+<script>
   
   export default {
     data() {
@@ -24,10 +24,10 @@
             active:require("@/assets/image/Home_a.png"),
           },
           {
-            name: "find",
-            title: "发现",
-            normal:require("@/assets/image/Find.png"),
-            active:require("@/assets/image/Find_a.png"),
+            name: "classify",
+            title: "分类",
+            normal:require("@/assets/image/ClassOption.png"),
+            active:require("@/assets/image/ClassOption_a.png"),
           },
           {
             name: "shopCar",
@@ -47,7 +47,7 @@
     created() {
       if (this.$route.name == "index") {
         this.active = 0;
-      } else if (this.$route.name == "find") {
+      } else if (this.$route.name == "classify") {
         this.active = 1;
       } else if (this.$route.name == "shopCar") {
         this.active = 2;

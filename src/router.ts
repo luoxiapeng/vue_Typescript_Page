@@ -12,9 +12,9 @@ export default new Router({
       component: () => import( './views/Home.vue'),
     },
     {
-      path: '/find',
-      name: 'find',
-      component: () => import( './views/Find.vue'),
+      path: '/classify',
+      name: 'classify',
+      component: () => import( './views/Classify.vue'),
     },
     {
       path: '/shopCar',

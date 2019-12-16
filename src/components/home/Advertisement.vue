@@ -29,7 +29,7 @@ export default{
    img{
      vertical-align: middle;
      height: 80px;
-     width: 600px;
+     width: 100%;
    }
    
  }

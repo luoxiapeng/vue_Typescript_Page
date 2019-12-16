@@ -1,7 +1,8 @@
 <template>
   <div class="Nav-contain">
      <div class="Nav-item" v-for="(item,index) in dataSourceList" :key="index">
-       {{item.mallCategoryName}}
+       <img :src="item.image" alt="">
+       <div>{{item.mallCategoryName}}</div>
      </div>
      
   </div>
@@ -19,8 +20,18 @@ export default class Nav extends Vue{
 <style lang="scss" scoped>
  .Nav-contain{
     padding: 10px;
+    display: flex;
     .Nav-item{
+      flex: 1;
+      text-align: center;
+      img{
+        height: 100px;
+        width: 100px;
+        display: inline-block;
+        vertical-align: middle;
 
+      }
+      
     }
     
   }

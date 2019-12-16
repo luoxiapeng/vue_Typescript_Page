@@ -2,7 +2,9 @@
   <div class="HomeClass">
     <Search/>
     <Swiper/>
+    <Division/>
     <Nav/>
+    <Advertisement/>
     <TableBar/>
   </div>
 </template>
@@ -10,8 +12,10 @@
 <script lang="ts">
 import TableBar from '@/components/common/TableBar.vue'
 import Search from '@/components/common/Search.vue'
+import Division from '@/components/common/Division.vue'
 import Swiper from '@/components/home/Swiper.vue'
 import Nav from '@/components/home/Nav.vue'
+import Advertisement from '@/components/home/Advertisement.vue'
 import { Component, Vue } from "vue-property-decorator";
 import * as ServiceApi from "@/api/modules/system";
 import { mapGetters} from "vuex";
@@ -21,7 +25,9 @@ import { mapGetters} from "vuex";
     TableBar,
     Search,
     Swiper,
-    Nav
+    Division,
+    Nav,
+    Advertisement
   }
 })
 export default class Home extends Vue {

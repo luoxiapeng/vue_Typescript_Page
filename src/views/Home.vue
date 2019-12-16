@@ -16,9 +16,12 @@ import Swiper from '@/components/home/Swiper.vue'
 import Nav from '@/components/home/Nav.vue'
 import Advertisement from '@/components/home/Advertisement.vue'
 import Recommendation from '@/components/home/Recommendation.vue'
+
+
 import { Component, Vue } from "vue-property-decorator";
 import * as ServiceApi from "@/api/modules/system";
 import { mapGetters} from "vuex";
+
 
 @Component({
   components: {

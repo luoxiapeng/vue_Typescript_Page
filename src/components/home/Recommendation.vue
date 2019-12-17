@@ -15,17 +15,12 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 import { Component,Prop, Vue } from "vue-property-decorator";
 import Title from '@/components/common/Title.vue';
 import 'swiper/dist/css/swiper.css'
 import {swiper , swiperSlide} from 'vue-awesome-swiper'
 export default{
-  components:{
-    Title,
-    swiperSlide,
-    swiper
-  },
   data(){
     return{
       title:'商品推荐',
@@ -37,6 +32,11 @@ export default{
   },
   created() {
     this.recommendGoods=this.$store.state.home.Homelist.data.recommend
+  },
+  components:{
+    Title,
+    swiperSlide,
+    swiper
   },
   
 }

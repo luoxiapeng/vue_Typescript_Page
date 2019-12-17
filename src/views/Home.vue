@@ -6,6 +6,8 @@
     <Nav/>
     <Advertisement/>
     <Recommendation/>
+    <Recommendation/>
+    <Recommendation/>
   </div>
 </template>
 
@@ -57,5 +59,6 @@ export default class Home extends Vue {
   .HomeClass {
     width: 100%;
     margin-bottom: 1.33rem;
+    position: relative;
   }
 </style>

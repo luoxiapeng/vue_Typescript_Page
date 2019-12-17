@@ -55,16 +55,17 @@ import { Component, Vue } from "vue-property-decorator";
 
 .search-bar,.navBarWrap {
   height: 100px;
-  width: 100%;
+  width: 97%;
   position: absolute;
   left: 0;
   top: 0;
   line-height: 100px;
   padding: 10px;
   z-index: 1;
+  overflow: hidden;
   .location-icon {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     padding-top: 25px;
     padding-left: 20px;
   }

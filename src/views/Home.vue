@@ -6,8 +6,8 @@
     <Nav/>
     <Advertisement/>
     <Recommendation/>
-    <Recommendation/>
-    <Recommendation/>
+     <Division/>
+    <FoodTable/>
   </div>
 </template>
 
@@ -18,6 +18,7 @@ import Swiper from '@/components/home/Swiper.vue'
 import Nav from '@/components/home/Nav.vue'
 import Advertisement from '@/components/home/Advertisement.vue'
 import Recommendation from '@/components/home/Recommendation.vue'
+import FoodTable from '@/components/common/FoodTable.vue'
 
 
 import { Component, Vue } from "vue-property-decorator";
@@ -32,7 +33,8 @@ import { mapGetters} from "vuex";
     Division,
     Nav,
     Advertisement,
-    Recommendation
+    Recommendation,
+    FoodTable
   }
 })
 export default class Home extends Vue {

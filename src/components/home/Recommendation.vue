@@ -7,7 +7,7 @@
           <div class="recommend-item">
             <img :src="item.image" width="80%" />
             <div>{{item.goodsName}}</div>
-            <div>￥{{item.price | moneyFilter}}(￥{{item.mallPrice | moneyFilter}})</div>
+            <div>￥{{item.price}}(￥{{item.mallPrice}})</div>
           </div>
         </swiper-slide>
       </swiper>

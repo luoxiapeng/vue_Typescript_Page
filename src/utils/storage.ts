@@ -2,22 +2,22 @@
  * @author luoxiapeng
  * @lastTime 2019/11/20
  */
-"use script"
+"use script";
 class Storage {
-  Key: string
-  Val: any
+  Key: string;
+  Val: any;
   constructor(Key: string, Val: any) {
-    this.Key = Key
-    this.Val = Val
+    this.Key = Key;
+    this.Val = Val;
   }
   public setItem(): any {
-    window.localStorage.setItem(this.Key, this.Val)
+    window.localStorage.setItem(this.Key, this.Val);
   }
   public getItem(): any {
-    return window.localStorage.getItem(this.Key)
+    return window.localStorage.getItem(this.Key);
   }
   public removeItem(): any {
-    return window.localStorage.removeItem(this.Key)
+    return window.localStorage.removeItem(this.Key);
   }
 }
-export default Storage
+export default Storage;

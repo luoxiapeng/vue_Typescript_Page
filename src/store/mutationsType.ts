@@ -1,1 +1,1 @@
-export const GETHOMELIST:string="getHomeList"
+export const GETHOMELIST: string = "getHomeList";

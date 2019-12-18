@@ -1,22 +1,18 @@
 <template>
-  <div class="Division-contain">  
-  </div>
+  <div class="Division-contain"></div>
 </template>
 
 <script lang="ts">
-import { Component,Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
-export default{
-  
-}
+export default {};
 </script>
 
 
 <style lang="scss" scoped>
- .Division-contain{
-   height: 20px;
-   width: 100%;
-   background-color: #f4f4f4;
- }
-
+.Division-contain {
+  height: 20px;
+  width: 100%;
+  background-color: #f4f4f4;
+}
 </style>

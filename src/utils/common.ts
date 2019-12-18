@@ -1,5 +1,3 @@
-
-
 /**
  * @author luoxiapeng
  * @lastTime 2019/12/3
@@ -7,7 +5,7 @@
 const toString = Object.prototype.toString;
 
 export function isDate(val: any): val is Date {
-  return toString.call(val) === '[object Date]';
+  return toString.call(val) === "[object Date]";
 }
 
 // export function isObject(val: any): val is Object {
@@ -15,15 +13,15 @@ export function isDate(val: any): val is Date {
 // }
 
 export function isPlainObject(val: any): val is Object {
-  return toString.call(val) === '[object Object]';
+  return toString.call(val) === "[object Object]";
 }
 
 export function isFormData(val: any): val is FormData {
-  return typeof val !== 'undefined' && val instanceof FormData;
+  return typeof val !== "undefined" && val instanceof FormData;
 }
 
 export function isURLSearchParams(val: any): val is URLSearchParams {
-  return typeof val !== 'undefined' && val instanceof URLSearchParams;
+  return typeof val !== "undefined" && val instanceof URLSearchParams;
 }
 
 export function extend<T, U>(to: T, from: U): T & U {
@@ -58,14 +56,15 @@ export function deepMerge(...objs: any[]): any {
 export function sethtml(designSize: number, rootValue?: number) {
   let rootV = 100;
   if (rootValue) {
-      rootV = rootValue;
+    rootV = rootValue;
   }
   // 窗口宽度
   const winWidth = window.document.documentElement.clientWidth;
   // 如果窗口宽度超过1.5倍设计图了,则不再调整
-  if (winWidth > 1.5 * designSize) { return; }
+  if (winWidth > 1.5 * designSize) {
+    return;
+  }
   // window.console.log(winWidth);
-  const htmlFontSize = winWidth * rootV / designSize;
-  window.document.documentElement.style.fontSize = htmlFontSize + 'px';
+  const htmlFontSize = (winWidth * rootV) / designSize;
+  window.document.documentElement.style.fontSize = htmlFontSize + "px";
 }
-

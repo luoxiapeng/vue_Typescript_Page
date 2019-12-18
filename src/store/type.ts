@@ -1,4 +1,4 @@
-export interface systemState{
+export interface systemState {
   Homelist: Object;
-  list:Object
+  list: Object;
 }

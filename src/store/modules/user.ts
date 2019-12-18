@@ -1,22 +1,14 @@
-
 /**
  * @author luoxiapeng
  * @lastTime 2019/12/4
  */
-import * as mutationsType from '../mutationsType'
+import * as mutationsType from "../mutationsType";
 const user = {
   state: {
-    list:[]
+    list: []
   },
-  mutations: {
-    
+  mutations: {},
+  actions: {}
+};
 
-   
-  },
-  actions: {
-
-    
-  }
-}
-
-export default user
+export default user;

@@ -4,8 +4,8 @@
  *  @lastTime 2019/12/1
  */
 // 兼容本地环境
-export function getWayUrl():string {
-  const urlMap:any = {
+export function getWayUrl(): string {
+  const urlMap: any = {
     local: "https://easy-mock.com/mock/5de89c8d89c8451dc927ee67/SmallVue/mock",
     test: "http://api-test.myutopa.com/pay/app",
     dev: "https://easy-mock.com/mock/5de89c8d89c8451dc927ee67/SmallVue/mock",

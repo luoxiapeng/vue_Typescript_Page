@@ -1,16 +1,10 @@
 <template>
-  <div>
-    省钱
-
-  </div>
+  <div>省钱</div>
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {};
 </script>
 
 <style lang="scss" scoped>
-
 </style>

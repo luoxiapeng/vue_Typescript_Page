@@ -1,21 +1,14 @@
 <template>
-  <div>
-    我的
-  </div>
+  <div>我的</div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 @Component({
-  components: {
-
-  }
+  components: {}
 })
-export default class Me extends Vue{
-  
-}
+export default class Me extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-
 </style>

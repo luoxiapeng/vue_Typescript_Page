@@ -1,16 +1,10 @@
 <template>
-  <div>
-    新品
-
-  </div>
+  <div>新品</div>
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {};
 </script>
 
 <style lang="scss" scoped>
-
 </style>

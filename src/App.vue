@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div class="main-box">
         <div class="main-div">
             <keep-alive>
                 <router-view />
@@ -65,6 +65,14 @@ export default {
 }
 </script>
 <style lang="scss" scope>
+.main-box{
+  height: 100%;
+  width: 100%;
+  .main-div{
+    height: 100%;
+    width: 100%;
+  }
+}
 
 
 </style>
